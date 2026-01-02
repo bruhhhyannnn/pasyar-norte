@@ -35,6 +35,24 @@ export default function RootHome() {
           </View>
         </View>
       </View>
+
+      {/* Category Section */}
+      <View className="bg-slate-100 p-5">
+        <Text className="mb-2 text-2xl font-extrabold">
+          Plan your trip. Choose your preference.
+        </Text>
+        <View className="flex-row flex-wrap">
+          {preferences.map((item, index) => (
+            <View key={index} className="w-1/2 p-1">
+              {/* todo: add the actual checkmark icon */}
+              <View className="items-center rounded-lg border border-slate-400 p-5">
+                {/* todo: use actual icons */}
+                <Text className="text-lg font-semibold">{item}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+      </View>
     </SafeAreaView>
   );
 }

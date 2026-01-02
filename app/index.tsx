@@ -3,6 +3,7 @@ import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from '../components/ui/Icon';
 import { categories } from '../data/categoriesData';
+import CustomCategoryCard from 'components/ui/CustomCategoryCard';
 
 export default function RootHome() {
   return (
@@ -35,25 +36,7 @@ export default function RootHome() {
         <Text className="mb-2 text-2xl font-extrabold">Plan your trip.</Text>
         <View className="flex-row flex-wrap">
           {categories.map((item, index) => (
-            <TouchableOpacity
-              key={index}
-              className="w-1/2 p-1"
-              onPress={() => {
-                Alert.alert(`${item.category} category clicked!`);
-              }}>
-              <View className="items-center rounded-lg border border-slate-400 bg-slate-50 p-5">
-                <View className="absolute right-2 top-2">
-                  <Icon
-                    name="checkbox-blank-circle-outline"
-                    family="MaterialCommunityIcons"
-                    size={20}
-                  />
-                  <Icon name="check-circle" family="MaterialCommunityIcons" size={20} />
-                </View>
-                <Icon name={item.iconName} />
-                <Text className="text-lg font-semibold">{item.category}</Text>
-              </View>
-            </TouchableOpacity>
+            <CustomCategoryCard key={index} category={item.category} iconName={item.iconName} />
           ))}
         </View>
       </View>

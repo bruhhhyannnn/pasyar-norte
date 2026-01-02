@@ -1,7 +1,6 @@
-import '../global.css';
 import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { categories } from '../data/categoriesData';
-import { Icon, CustomCategoryCard, SafeAreaContainer } from '../components/ui';
+import { Icon, CustomCategoryCard, SafeAreaContainer } from '@/components/ui';
 
 export default function RootHome() {
   return (

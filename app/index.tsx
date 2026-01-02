@@ -33,7 +33,7 @@ export default function RootHome() {
       {/* Category Section */}
       <View className="bg-slate-100 p-5">
         <Text className="mb-2 text-2xl font-extrabold">Plan your trip.</Text>
-        <View className="flex-row flex-wrap">
+        <View className="flex-row flex-wrap gap-2">
           {categories.map((item, index) => (
             <CustomCategoryCard key={index} category={item.category} iconName={item.iconName} />
           ))}

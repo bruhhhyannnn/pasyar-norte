@@ -1,5 +1,6 @@
-import { Alert, Text, TouchableOpacity } from 'react-native';
+import { Alert, TouchableOpacity } from 'react-native';
 import Icon from './Icon';
+import ThemedText from './ThemedText';
 
 interface CustomCategoryProps {
   category: string;
@@ -14,7 +15,7 @@ export default function CustomCategory({ category, iconName }: CustomCategoryPro
         Alert.alert(`${category} category clicked!`);
       }}>
       <Icon name={iconName} />
-      <Text className="text-lg font-semibold">{category}</Text>
+      <ThemedText variant="body_lg">{category}</ThemedText>
     </TouchableOpacity>
   );
 }

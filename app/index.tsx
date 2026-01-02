@@ -2,18 +2,7 @@ import '../global.css';
 import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from '../components/ui/Icon';
-
-const categories = [
-  { category: 'Scenery', iconName: 'image-outline' },
-  { category: 'Accessibility', iconName: 'car-outline' },
-  { category: 'Affordability', iconName: 'cash-outline' },
-  { category: 'Cleanliness', iconName: 'color-wand-outline' },
-  { category: 'People', iconName: 'people-outline' },
-  { category: 'Food', iconName: 'fast-food-outline' },
-  { category: 'Activity', iconName: 'pulse-outline' },
-  { category: 'Accommodations', iconName: 'business-outline' },
-  { category: 'Experience', iconName: 'star-outline' },
-];
+import { categories } from '../data/categoriesData';
 
 export default function RootHome() {
   return (

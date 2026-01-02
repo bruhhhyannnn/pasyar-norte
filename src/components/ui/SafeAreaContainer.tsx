@@ -1,5 +1,5 @@
-import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ThemedView from './ThemedView';
 
 interface SafeAreaContainerProps {
   showPadding?: boolean;
@@ -11,10 +11,10 @@ export default function SafeAreaContainer({
   children,
 }: SafeAreaContainerProps) {
   return (
-    <SafeAreaView
-      edges={['top', 'left', 'right']}
-      className={showPadding ? 'p-5' : 'flex-1 bg-slate-200'}>
-      {children}
-    </SafeAreaView>
+    <ThemedView className={showPadding ? 'p-5' : 'flex-1'}>
+      <SafeAreaView edges={['top', 'left', 'right']} className="flex-1">
+        {children}
+      </SafeAreaView>
+    </ThemedView>
   );
 }

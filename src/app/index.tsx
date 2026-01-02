@@ -1,12 +1,20 @@
 import { Alert, TouchableOpacity, View } from 'react-native';
-import { categories } from '../data/categoriesData';
-import { Icon, CustomCategoryCard, SafeAreaContainer, ThemedText } from '@/components/ui';
+import { categories } from '@/data/categoriesData';
+import {
+  Icon,
+  CustomCategoryCard,
+  SafeAreaContainer,
+  ThemedText,
+  ThemedView,
+} from '@/components/ui';
 
 export default function RootHome() {
   return (
     <SafeAreaContainer>
       {/* Header Section */}
-      <View className="flex-row items-center justify-between border-b border-slate-300 bg-slate-100 p-5">
+      <ThemedView
+        variant="bg"
+        className="flex-row items-center justify-between border-b border-slate-300 p-5">
         {/* App Name */}
         {/* TODO: add animation effect on emoji */}
         <ThemedText variant="h300">🗺️ Pasyar Norte</ThemedText>
@@ -28,23 +36,23 @@ export default function RootHome() {
             <Icon name="sunny-outline" />
           </TouchableOpacity>
         </View>
-      </View>
+      </ThemedView>
 
       {/* Category Section */}
-      <View className="bg-slate-100 p-5">
+      <ThemedView variant="bg" className="p-5">
         <ThemedText variant="h600">Plan your trip.</ThemedText>
         <View className="mt-2 flex-row flex-wrap gap-2">
           {categories.map((item, index) => (
             <CustomCategoryCard key={index} category={item.category} iconName={item.iconName} />
           ))}
         </View>
-      </View>
+      </ThemedView>
 
       {/* Map Section */}
-      <View className="flex-1 items-center justify-center">
+      <ThemedView className="flex-1 items-center justify-center">
         {/* TODO: add leaflet map viewer */}
         <ThemedText>Map Section</ThemedText>
-      </View>
+      </ThemedView>
     </SafeAreaContainer>
   );
 }

@@ -1,5 +1,6 @@
 import { Alert, TouchableOpacity, View } from 'react-native';
 import { categories } from '@/data/categoriesData';
+import { useThemeStore } from '@/stores/useThemeStore';
 import {
   Icon,
   CustomCategoryCard,
@@ -9,6 +10,10 @@ import {
 } from '@/components/ui';
 
 export default function RootHome() {
+  // Theme Functionality
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
+
   return (
     <SafeAreaContainer>
       {/* Header Section */}
@@ -28,12 +33,8 @@ export default function RootHome() {
             }}>
             <Icon name="information-circle-outline" />
           </TouchableOpacity>
-          <TouchableOpacity
-            // TODO: create and add theme functionality
-            onPress={() => {
-              Alert.alert('Dark mode clicked!');
-            }}>
-            <Icon name="sunny-outline" />
+          <TouchableOpacity onPress={toggleTheme}>
+            <Icon name={theme === 'dark' ? 'sunny-outline' : 'moon-outline'} />
           </TouchableOpacity>
         </View>
       </ThemedView>

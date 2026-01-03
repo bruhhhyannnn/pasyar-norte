@@ -8,7 +8,7 @@ interface IconProps {
   color?: string;
 }
 
-export default function Icon({ name, family = 'Ionicons', size = 24, color }: IconProps) {
+export default function Icon({ name, family = 'Ionicons', size = 20, color }: IconProps) {
   const theme = useColorScheme().colorScheme;
   // TODO: use actual external and unified color palette here
   const variants = theme === 'light' ? '#0f172a' : '#f1f5f9';

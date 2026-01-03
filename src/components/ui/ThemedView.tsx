@@ -1,4 +1,5 @@
 import { View, ViewProps } from 'react-native';
+import { useShadows } from '@/styles/shadow';
 
 interface ThemedViewProps extends ViewProps {
   variant?: 'bg_dark' | 'bg' | 'bg_light';
@@ -12,6 +13,8 @@ export default function ThemedView({
   children,
   ...props
 }: ThemedViewProps) {
+  const shadow = useShadows();
+
   const variants = {
     bg_dark: 'bg-slate-200 dark:bg-slate-950',
     bg: 'bg-slate-100 dark:bg-slate-900',
@@ -19,7 +22,10 @@ export default function ThemedView({
   };
 
   return (
-    <View className={`${variants[variant]} ${className || ''}`} {...props}>
+    <View
+      className={`${variants[variant]} ${className || ''}`}
+      {...props}
+      style={variant === 'bg_light' && shadow.card}>
       {children}
     </View>
   );

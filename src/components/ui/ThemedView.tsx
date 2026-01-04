@@ -18,7 +18,7 @@ export default function ThemedView({
   const variants = {
     bg_dark: 'bg-slate-200 dark:bg-slate-950',
     bg: 'bg-slate-100 dark:bg-slate-900',
-    bg_light: 'bg-slate-50 dark:bg-slate-800',
+    bg_light: 'bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/70',
   };
 
   return (

@@ -65,11 +65,19 @@ export default function InfoModal({ isOpen, onClose }: InfoModalProps) {
               <ThemedText variant="body_lg">BY</ThemedText>
             </View>
             <View className="flex-row flex-wrap gap-3">
-              {/* TODO: add actual portfolio links here */}
-              <DeveloperCard name="Christian Andrei Arzadon" portfolioLink="https:123.com" />
-              <DeveloperCard name="Carl Dominic Doño" portfolioLink="https:123.com" />
-              <DeveloperCard name="Fritzjerald Domingo" portfolioLink="https:123.com" />
-              <DeveloperCard name="Mhar Justine Torres" portfolioLink="https:123.com" />
+              <DeveloperCard
+                name="Christian Andrei Arzadon"
+                portfolioLink="https://www.arzadonchristian.dev"
+              />
+              <DeveloperCard name="Carl Dominic Doño" portfolioLink="" />
+              <DeveloperCard
+                name="Fritzjerald Domingo"
+                portfolioLink="https://www.facebook.com/KiriSakiKyoutaro"
+              />
+              <DeveloperCard
+                name="Mhar Justine Torres"
+                portfolioLink="https://www.facebook.com/mharjustine.torres.1"
+              />
             </View>
           </View>
         </ThemedView>

@@ -15,10 +15,10 @@ export default function ThemedText({ variant = 'body', className, children }: Th
     body: 'text-base',
     body_sm: 'text-sm',
   };
-  return (
-    <Text
-      className={`color-slate-900 dark:color-slate-100 ${variants[variant]} ${className || ''}`}>
-      {children}
-    </Text>
-  );
+
+  // Detects custom color classes to avoid overriding customized colors
+  const hasColorClass = className?.includes('color-') || className?.includes('text-');
+  const baseColor = !hasColorClass ? 'color-slate-900 dark:color-slate-100' : '';
+
+  return <Text className={`${className || ''} ${variants[variant]} ${baseColor}`}>{children}</Text>;
 }

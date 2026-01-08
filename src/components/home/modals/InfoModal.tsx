@@ -10,7 +10,7 @@ interface InfoModalProps {
 
 export default function InfoModal({ isOpen, onClose }: InfoModalProps) {
   return (
-    <Modal visible={isOpen} animationType="slide" transparent={true} onRequestClose={onClose}>
+    <Modal visible={isOpen} animationType="fade" transparent={true} onRequestClose={onClose}>
       <View className="absolute inset-0 items-center justify-center bg-black/80">
         <ThemedView variant="bg" className="w-[80%] gap-2 rounded-2xl">
           <TouchableOpacity className="absolute -right-4 -top-4 z-10" onPress={onClose}>
@@ -21,11 +21,11 @@ export default function InfoModal({ isOpen, onClose }: InfoModalProps) {
 
           {/* About Pasyar Norte */}
           {/* TODO: make this as gradient */}
-          <View className="gap-1 rounded-t-2xl bg-violet-500 p-6">
-            <ThemedText variant="h900" className="text-center">
+          <View className="gap-1 rounded-t-2xl bg-violet-500 px-6 pb-8 pt-6">
+            <ThemedText variant="h900" className="text-center color-slate-100">
               PasyarNorte
             </ThemedText>
-            <ThemedText className="text-center">
+            <ThemedText className="text-center color-slate-100">
               Aspect-Based Analysis of Tourist Reviews for a Preference-Aware Recommendation for the
               Province of Ilocos Norte Destinations
             </ThemedText>
@@ -40,7 +40,7 @@ export default function InfoModal({ isOpen, onClose }: InfoModalProps) {
               <View className="flex-row items-center gap-2 rounded-xl bg-yellow-500 px-4 py-0.5">
                 {/* TODO: call from actual color palette not hardcoded values here */}
                 <SimpleLineIcons name="graduation" color={'#f1f5f9'} size={16} />
-                <ThemedText variant="body" className="font-bold">
+                <ThemedText variant="body" className="font-bold color-slate-100">
                   OFFICIAL THESIS PROJECT
                 </ThemedText>
               </View>
@@ -50,9 +50,10 @@ export default function InfoModal({ isOpen, onClose }: InfoModalProps) {
                 Powered by ABSA
               </ThemedText>
               <ThemedText className="text-center">
-                Our system uses Aspect-Based Sentiment Analysis (ABSA) on thousands of reviews.
-                Unlike standard maps, we understand context—knowing if a user loves the
-                &quot;Food&quot; but hates the &quot;Roads.&quot;
+                Our system uses{' '}
+                <ThemedText className="font-bold">Aspect-Based Sentiment Analysis</ThemedText>{' '}
+                (ABSA) on thousands of reviews. Unlike standard maps, we understand context—knowing
+                if a user loves the &quot;Food&quot; but hates the &quot;Roads.&quot;
               </ThemedText>
             </View>
           </View>

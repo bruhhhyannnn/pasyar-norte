@@ -1,7 +1,7 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useColorScheme } from 'nativewind';
 
-interface IconProps {
+export interface IconProps {
   name: string;
   family?: 'Ionicons' | 'MaterialCommunityIcons';
   size?: number;

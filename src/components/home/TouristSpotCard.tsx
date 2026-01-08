@@ -1,6 +1,6 @@
 import { View, ScrollView } from 'react-native';
 import { ThemedText, ThemedView, IconProps } from '@/components/ui';
-import CustomCategoryCard from '@/components/home/CustomCategoryCard';
+import CategoryCard from '@/components/home/CategoryCard';
 
 interface TouristSpotCardProps {
   name: string;
@@ -15,7 +15,7 @@ export default function TouristSpotCard({ name, description, icon }: TouristSpot
         <ScrollView>
           <View className="flex-row items-center gap-2 ">
             <ThemedText variant="h300">{name}</ThemedText>
-            <CustomCategoryCard category="test" iconName="image-outline" />
+            <CategoryCard category="test" iconName="image-outline" />
           </View>
           <ThemedText>{description}</ThemedText>
         </ScrollView>
